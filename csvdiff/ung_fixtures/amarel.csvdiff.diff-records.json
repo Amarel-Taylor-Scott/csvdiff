@@ -1,0 +1,314 @@
+[
+  {
+    "inputs": {
+      "new_records": [
+        {
+          "id": "1",
+          "name": "apple",
+          "price": "9.99",
+          "stock": "12"
+        },
+        {
+          "id": "2",
+          "name": "pear",
+          "price": "17.99",
+          "stock": "45"
+        },
+        {
+          "id": "3",
+          "name": "plum",
+          "price": "4.99",
+          "stock": "30"
+        },
+        {
+          "id": "5",
+          "name": "kiwi",
+          "price": "6.49",
+          "stock": "3"
+        }
+      ],
+      "old_records": [
+        {
+          "id": "1",
+          "name": "apple",
+          "price": "9.99",
+          "stock": "12"
+        },
+        {
+          "id": "2",
+          "name": "pear",
+          "price": "19.99",
+          "stock": "50"
+        },
+        {
+          "id": "3",
+          "name": "plum",
+          "price": "4.99",
+          "stock": "0"
+        },
+        {
+          "id": "4",
+          "name": "fig",
+          "price": "2.99",
+          "stock": "7"
+        }
+      ]
+    },
+    "parameters": {
+      "key": "id"
+    },
+    "expect": {
+      "report": {
+        "summary": {
+          "added": 1,
+          "removed": 1,
+          "changed": 2,
+          "unchanged": 1
+        },
+        "has_differences": true,
+        "key_columns": [
+          "id"
+        ],
+        "compared_columns": [
+          "name",
+          "price",
+          "stock"
+        ],
+        "added": [
+          {
+            "id": "5",
+            "name": "kiwi",
+            "price": "6.49",
+            "stock": "3"
+          }
+        ],
+        "removed": [
+          {
+            "id": "4",
+            "name": "fig",
+            "price": "2.99",
+            "stock": "7"
+          }
+        ],
+        "changed": [
+          {
+            "key": [
+              "2"
+            ],
+            "changes": [
+              {
+                "column": "price",
+                "old": "19.99",
+                "new": "17.99"
+              },
+              {
+                "column": "stock",
+                "old": "50",
+                "new": "45"
+              }
+            ]
+          },
+          {
+            "key": [
+              "3"
+            ],
+            "changes": [
+              {
+                "column": "stock",
+                "old": "0",
+                "new": "30"
+              }
+            ]
+          }
+        ],
+        "unchanged": 1,
+        "dup_keys_old": [],
+        "dup_keys_new": []
+      }
+    }
+  },
+  {
+    "inputs": {
+      "new_records": [
+        {
+          "qty": "1",
+          "region": "eu",
+          "sku": "a",
+          "updated_at": "t9"
+        },
+        {
+          "qty": "5",
+          "region": "us",
+          "sku": "a",
+          "updated_at": "t9"
+        }
+      ],
+      "old_records": [
+        {
+          "qty": "1",
+          "region": "eu",
+          "sku": "a",
+          "updated_at": "t1"
+        },
+        {
+          "qty": "2",
+          "region": "us",
+          "sku": "a",
+          "updated_at": "t1"
+        }
+      ]
+    },
+    "parameters": {
+      "ignore": "updated_at",
+      "key": "region,sku"
+    },
+    "expect": {
+      "report": {
+        "summary": {
+          "added": 0,
+          "removed": 0,
+          "changed": 1,
+          "unchanged": 1
+        },
+        "has_differences": true,
+        "key_columns": [
+          "region",
+          "sku"
+        ],
+        "compared_columns": [
+          "qty"
+        ],
+        "added": [],
+        "removed": [],
+        "changed": [
+          {
+            "key": [
+              "us",
+              "a"
+            ],
+            "changes": [
+              {
+                "column": "qty",
+                "old": "2",
+                "new": "5"
+              }
+            ]
+          }
+        ],
+        "unchanged": 1,
+        "dup_keys_old": [],
+        "dup_keys_new": []
+      }
+    }
+  },
+  {
+    "inputs": {
+      "new_records": [
+        {
+          "id": "1",
+          "name": "apple",
+          "price": "9.99",
+          "stock": "12"
+        },
+        {
+          "id": "2",
+          "name": "pear",
+          "price": "17.99",
+          "stock": "45"
+        },
+        {
+          "id": "3",
+          "name": "plum",
+          "price": "4.99",
+          "stock": "30"
+        },
+        {
+          "id": "5",
+          "name": "kiwi",
+          "price": "6.49",
+          "stock": "3"
+        }
+      ],
+      "old_records": [
+        {
+          "id": "1",
+          "name": "apple",
+          "price": "9.99",
+          "stock": "12"
+        },
+        {
+          "id": "2",
+          "name": "pear",
+          "price": "19.99",
+          "stock": "50"
+        },
+        {
+          "id": "3",
+          "name": "plum",
+          "price": "4.99",
+          "stock": "0"
+        },
+        {
+          "id": "4",
+          "name": "fig",
+          "price": "2.99",
+          "stock": "7"
+        }
+      ]
+    },
+    "parameters": {
+      "columns": "price",
+      "key": "id"
+    },
+    "expect": {
+      "report": {
+        "summary": {
+          "added": 1,
+          "removed": 1,
+          "changed": 1,
+          "unchanged": 2
+        },
+        "has_differences": true,
+        "key_columns": [
+          "id"
+        ],
+        "compared_columns": [
+          "price"
+        ],
+        "added": [
+          {
+            "id": "5",
+            "name": "kiwi",
+            "price": "6.49",
+            "stock": "3"
+          }
+        ],
+        "removed": [
+          {
+            "id": "4",
+            "name": "fig",
+            "price": "2.99",
+            "stock": "7"
+          }
+        ],
+        "changed": [
+          {
+            "key": [
+              "2"
+            ],
+            "changes": [
+              {
+                "column": "price",
+                "old": "19.99",
+                "new": "17.99"
+              }
+            ]
+          }
+        ],
+        "unchanged": 2,
+        "dup_keys_old": [],
+        "dup_keys_new": []
+      }
+    }
+  }
+]
